@@ -70,9 +70,9 @@ def plpva(x, xmin, vec=numpy.arange(1.50, 3.51, 0.01), reps=1000, quiet=False, *
     nof = numpy.array([])
 
     if not quiet:
-        print 'Power-law Distribution, p-value calculation'
-        print '   Warning: This can be a slow calculation; please be patient.'
-        print '   n    = %i\n   xmin = %6.4f\n   reps = %i' % (len(x), xmin, reps)
+        print('Power-law Distribution, p-value calculation')
+        print('   Warning: This can be a slow calculation; please be patient.')
+        print('   n    = %i\n   xmin = %6.4f\n   reps = %i' % (len(x), xmin, reps))
 
     # continuous method
     if (min(x) > 1000 and len(x) > 100) or sum(x-numpy.floor(x)):
@@ -121,7 +121,7 @@ def plpva(x, xmin, vec=numpy.arange(1.50, 3.51, 0.01), reps=1000, quiet=False, *
             if not quiet:
 #                fprintf('[%i]\tp = %6.4f\t[%4.2fm]\n',B,sum(nof(1:B)>=gof)./B,toc/60);
 #                print '[%i]\tp = %6.4f\t[%4.2fm]\n' % (B+1, sum(nof>=gof)/float(B+1), toc/60)
-                print '[%i]\tp = %.4f\n' % (B+1, sum(nof>=gof) / float(B+1))
+                print('[%i]\tp = %.4f\n' % (B+1, sum(nof>=gof) / float(B+1)))
         p = sum(nof>=gof) / float(len(nof))
 
     # discrete method
@@ -216,7 +216,7 @@ def plpva(x, xmin, vec=numpy.arange(1.50, 3.51, 0.01), reps=1000, quiet=False, *
             if not quiet:
 #                fprintf('[%i]\tp = %6.4f\t[%4.2fm]\n',B,sum(nof(1:B)>=gof)./B,toc/60);
 #                print '[%i]\tp = %6.4f\t[%4.2fm]\n' % (B+1, sum(nof>=gof)/float(B+1), toc/60)
-                print '[%i]\tp = %.4f\n' % (B+1, sum(nof>=gof) / float(B+1))
+                print('[%i]\tp = %.4f\n' % (B+1, sum(nof>=gof) / float(B+1)))
         p = sum(nof>=gof) / float(len(nof))
 
     return p, gof
